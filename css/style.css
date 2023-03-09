@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #4b6cb7;
+    background: linear-gradient(to right, #182848, #4b6cb7);
+    font-style: normal;
+}
+.titulo{
+    text-align: center;
+    color: white;
+    margin: 20px;
+}
+.tarjeta{
+    background-color: skyblue;
+    height: 400px;
+    width: 350px;
+    margin: 0 auto;
+    border-radius: 5px;
+    justify-content: center;
+}
+
+.tituloTarjeta{
+    text-align: center;
+    padding: 15px;
+    color: darkblue;
+    font-size:  20px;
+
+}
+
+.Inicio{
+    display: flex;
+    justify-content: center;
+}
+
+.Inicio > a{
+    color: white;
+    background-color: blue;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 10px;
+    padding: 10px;
+    width: 90px;
+    height: 100%;
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid #4b6cb7;
+}
+.Inicio > a:hover{
+    background-color: darkblue;
+}
+
+.InicioLinks{
+    display: flex;
+    justify-content: center;
+    padding-top: 60px;
+}
+
+.InicioLinks > a{
+    color: white;
+    background-color: blue;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 10px;
+    padding: 10px;
+    width: 90px;
+    height: 80px;
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid #4b6cb7;
+}
+.InicioLinks > a:hover{
+    background-color: darkblue;
+}
+
+.formularios{
+    width: 100%;
+    padding: 20px;
+    margin: auto;
+}
+.formularios > input{
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 3px;
+    border: 1px solid #4b6cb7;
+}
+.botonRegistro{
+    background-color: blue;
+    color: white;
+}
+.botonRegistro:hover{
+    background-color: darkblue;
+}
+.botonInicioSesion{
+    background-color: blue;
+    color: white;
+}
+.botonInicioSesion:hover{
+    background-color: darkblue;
+}
+
