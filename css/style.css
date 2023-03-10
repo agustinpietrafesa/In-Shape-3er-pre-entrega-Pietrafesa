@@ -8,10 +8,25 @@ body{
     background: linear-gradient(to right, #182848, #4b6cb7);
     font-style: normal;
 }
+
 .titulo{
+    position: relative;
+    display: flex;
     text-align: center;
     color: white;
-    margin: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.tituloIndex{
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.encabezado{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0)
 }
 .tarjeta{
     background-color: skyblue;
@@ -102,4 +117,19 @@ body{
 .botonInicioSesion:hover{
     background-color: darkblue;
 }
+.buttonAtras{
+    background-color: blue;
+    width: 80px;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 3px;
+    border: 1px solid #4b6cb7;
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+   
+}
 
+.buttonAtras:hover{
+    background-color: darkblue;
+}
