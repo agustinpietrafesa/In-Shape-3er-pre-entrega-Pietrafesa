@@ -1,4 +1,4 @@
-/*********Datos de los usuarios *********/
+/*********Registro de los usuarios *********/
 
 const formRegistro = document.querySelector('#formRegistrarse');
 
@@ -38,5 +38,8 @@ const crearSocio = (evt) => {
 
 formRegistro.addEventListener('submit', crearSocio);
 
+/************Ingreso de los usuarios ************/
+
+const formInicioSesion = document.querySelector('#formInicioSesion');
 
 
