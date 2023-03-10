@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 
+
 const crearSocio = (evt) => {
     evt.preventDefault()
     let nombre = document.querySelector('#nombre').value
@@ -36,10 +37,30 @@ const crearSocio = (evt) => {
     formRegistro.reset()
 }
 
+
+
+if(formRegistro){
 formRegistro.addEventListener('submit', crearSocio);
+}
+
 
 /************Ingreso de los usuarios ************/
 
 const formInicioSesion = document.querySelector('#formInicioSesion');
 
+const inicioSesion = (evt) => {
+    evt.preventDefault()    
+    let emailIngresado = document.querySelector('#emailSesion').value
+    let passwordIngresada = document.querySelector('#passwordSesion').value
 
+
+    formInicioSesion.reset()
+
+ }
+
+if(formInicioSesion){
+    formInicioSesion.addEventListener('submit', inicioSesion);
+}
+
+
+console.log(socios)
