@@ -4,6 +4,15 @@ const formRegistro = document.querySelector('#formRegistrarse');
 
 let socios = [];
 
+const actulizarStorage = () => {
+    localStorage.setItem('socios', JSON.stringify(socios))
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+   if(JSON.parse(localStorage.getItem('socios')) != null){
+    socios = JSON.parse(localStorage.getItem('socios'))
+   }
+})
 
 
 const crearSocio = (evt) => {
@@ -14,6 +23,7 @@ const crearSocio = (evt) => {
     let email = document.querySelector('#email').value
     let password =  document.querySelector('#password').value
 
+    
     const socio = {
         Nombre: nombre,
         Apellido: apellido,
@@ -22,6 +32,7 @@ const crearSocio = (evt) => {
     }
 
     socios.push(socio)
+    actulizarStorage()
     formRegistro.reset()
 }
 
