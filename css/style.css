@@ -94,6 +94,10 @@ body{
     width: 100%;
     padding: 20px;
     margin: auto;
+    text-align: center;
+    padding: 15px;
+    color: darkblue;
+    font-size:  20px;
 }
 .formularios > input{
     margin-bottom: 15px;
@@ -102,6 +106,10 @@ body{
     font-size: 15px;
     border-radius: 3px;
     border: 1px solid #4b6cb7;
+}
+.formularios > label >input{
+    margin-bottom: 15px;
+    padding: 10px;
 }
 .botonRegistro{
     background-color: blue;
@@ -133,3 +141,16 @@ body{
 .buttonAtras:hover{
     background-color: darkblue;
 }
+
+.botonGuardarDatos{
+    background-color: blue;
+    color: white;
+}
+
+.botonGuardarDatos:hover{
+    background-color: darkblue;
+}
+
+
+
+

@@ -39,6 +39,7 @@ const crearSocio = (evt) => {
 
     socios.push(socio)
     actulizarStorage()
+    welcome()
     formRegistro.reset()
 }
 
