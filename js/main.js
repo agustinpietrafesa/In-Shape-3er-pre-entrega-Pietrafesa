@@ -8,9 +8,14 @@ const actulizarStorage = () => {
     localStorage.setItem('socios', JSON.stringify(socios))
 }
 
+const welcome = () => {
+    location.href = "inicio.html"
+}
+
 document.addEventListener('DOMContentLoaded', () => {
    if(JSON.parse(localStorage.getItem('socios')) != null){
-    socios = JSON.parse(localStorage.getItem('socios'))
+    socios = JSON.parse(localStorage.getItem('socios'));
+    console.log(socios)
    }
 })
 
@@ -53,7 +58,7 @@ const inicioSesion = (evt) => {
     let emailIngresado = document.querySelector('#emailSesion').value
     let passwordIngresada = document.querySelector('#passwordSesion').value
 
-
+    welcome()
     formInicioSesion.reset()
 
  }
@@ -63,4 +68,3 @@ if(formInicioSesion){
 }
 
 
-console.log(socios)
