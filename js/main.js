@@ -138,11 +138,6 @@ const ingresoDatos = (evt) => {
         genero = "Masculino"
     }
 
-
-    console.log(sexo)
-    console.log(typeof sexo)
-    console.log(genero)
-
     const socio = {
         Usuario: nombre + " " + apellido,
         Edad: parseInt(document.querySelector('#edad').value),
@@ -154,6 +149,8 @@ const ingresoDatos = (evt) => {
     datosUsuarios.push(socio)
     actulizarStorageDatos()
     formMisDatos.reset()
+    verResultados()
+    
 
 }
 
@@ -163,38 +160,33 @@ if(formMisDatos){
 
 
 
-
-
 /********Formulas y funciones ***************/
-// let peso = datosUsuarios.peso
-// let altura
-// let edad
-// let grasa
 
-// console.log(peso)
+// let pesajes = document.querySelector('.tarjetaPesajes')
 
+// let peso = parseInt(document.querySelector('#peso').value)
 
 
 // function calculoImc(){
-//     return (peso/((altura/100)*(altura/100)));
-//  }
+//    return (peso/((altura/100)*(altura/100)));
+// }
  
-//  let imc = calculoImc();
+// let imc = calculoImc();
 
  
-//  function grasaMujer() {
-//     return (1.2 * imc) + (0.23 * edad) - 5.4
-//  }
-//  function grasaHombre() {
-//     return (1.2 * imc) + (0.23 * edad) - 10.8 - 5.4
-//  }
-//  function masaOseaMujer() {
-//     return peso * 0.14
-//  }
-//  function masaOseaHombre() {
-//     return peso * 0.15
-//  }
-//  function masaMuscular() {
-//     return peso - (peso * (grasa / 100)) - masaOsea
-//  }
+// function grasaMujer() {
+//    return (1.2 * imc) + (0.23 * edad) - 5.4
+// }
+// function grasaHombre() {
+//    return (1.2 * imc) + (0.23 * edad) - 10.8 - 5.4
+// }
+// function masaOseaMujer() {
+//    return peso * 0.14
+// }
+// function masaOseaHombre() {
+//    return peso * 0.15
+// }
+// function masaMuscular() {
+//    return peso - (peso * (grasa / 100)) - masaOsea
+// }
  

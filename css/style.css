@@ -173,7 +173,18 @@ body{
 .botonGuardarDatos:hover{
     background-color: darkblue;
 }
+.botonRealizarCalculos{
+    background-color: blue;
+    color: white;
+    margin-top: 40px;
+}
+.botonRealizarCalculos:hover{
+    background-color: darkblue;
+}
 
+#formCalcular{
+    text-align: center;
+}
 
 
 
