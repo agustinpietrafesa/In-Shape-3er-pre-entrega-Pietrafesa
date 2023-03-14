@@ -8,9 +8,14 @@ const actulizarStorage = () => {
     localStorage.setItem('socios', JSON.stringify(socios))
 }
 
+const actulizarStorageDatos = () => {
+    localStorage.setItem('datosUsuarios', JSON.stringify(datosUsuarios))
+}
+
 const welcome = () => {
     location.href = "inicio.html"
 }
+
 
 const verResultados = () => {
     location.href = "misPesajes.html"
@@ -21,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     socios = JSON.parse(localStorage.getItem('socios'));
     console.log(socios)
    }
+   
 })
 
 
@@ -87,10 +93,23 @@ if(formInicioSesion){
 }
 
 
+
 /***************Ingreso de datos  ********************/
 
 
 const formMisDatos = document.querySelector('#formMisDatos')
+
+let datosUsuarios = []
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    if(JSON.parse(localStorage.getItem('datosUsuarios')) != null){
+     datosUsuarios = JSON.parse(localStorage.getItem('datosUsuarios'));
+     console.log(datosUsuarios)
+    }
+    
+ })
 
 
 const ingresoDatos = (evt) => {
@@ -102,22 +121,61 @@ const ingresoDatos = (evt) => {
     let edad = document.querySelector('#edad').value
     let peso = document.querySelector('#peso').value
     let altura = document.querySelector('#altura').value
-    let genero = document.querySelector('#genero').value
-
+    let sexo = document.querySelector('#sexo').value
+ 
     const sociosDatos = {
+        Usuario: usuario,
         Edad: edad,
         Peso: peso,
         Altura: altura,
-        Genero: genero
+        Genero: sexo
     }
 
+    datosUsuarios.push(sociosDatos)
+    actulizarStorageDatos()
+    formMisDatos.reset()
+    verResultados()
 
-        
+
 }
 
 if(formMisDatos){
     formMisDatos.addEventListener('submit', ingresoDatos);
 }
 
-/**************Pesajes y calculos****************/
 
+
+
+/********Formulas y funciones ***************/
+let peso = datosUsuarios.peso
+let altura
+let edad
+let grasa
+
+console.log(peso)
+
+
+
+function calculoImc(){
+    return (peso/((altura/100)*(altura/100)));
+ }
+ 
+ let imc = calculoImc();
+
+ 
+ function grasaMujer() {
+    return (1.2 * imc) + (0.23 * edad) - 5.4
+ }
+ function grasaHombre() {
+    return (1.2 * imc) + (0.23 * edad) - 10.8 - 5.4
+ }
+ function masaOseaMujer() {
+    return peso * 0.14
+ }
+ function masaOseaHombre() {
+    return peso * 0.15
+ }
+ function masaMuscular() {
+    return peso - (peso * (grasa / 100)) - masaOsea
+ }
+ 
