@@ -105,37 +105,55 @@ let datosUsuarios = []
 
 document.addEventListener('DOMContentLoaded', () => {
     if(JSON.parse(localStorage.getItem('datosUsuarios')) != null){
-     datosUsuarios = JSON.parse(localStorage.getItem('datosUsuarios'));
-     console.log(datosUsuarios)
+    datosUsuarios = JSON.parse(localStorage.getItem('datosUsuarios'));
+    console.log(datosUsuarios)
     }
     
  })
 
+ if(formMisDatos){
+
+ let nombre = document.querySelector('#nombre').value
+ let apellido = document.querySelector('#apellido').value
+ let usuario = nombre + " " + apellido
+ let edad = document.querySelector('#edad').value
+ let peso = document.querySelector('#peso').value
+ let altura = document.querySelector('#altura').value
+ let sexo 
+
+}
 
 const ingresoDatos = (evt) => {
     evt.preventDefault()
 
+
     let nombre = document.querySelector('#nombre').value
     let apellido = document.querySelector('#apellido').value
-    let usuario = nombre + " " + apellido
-    let edad = document.querySelector('#edad').value
-    let peso = document.querySelector('#peso').value
-    let altura = document.querySelector('#altura').value
-    let sexo = document.querySelector('#sexo').value
- 
-    const sociosDatos = {
-        Usuario: usuario,
-        Edad: edad,
-        Peso: peso,
-        Altura: altura,
-        Genero: sexo
+    let sexo = parseInt(document.querySelector("input[name='genero']:checked").value)
+    let genero 
+
+    if(sexo == 1){
+        genero = "Femenino"
+    }else{
+        genero = "Masculino"
     }
 
-    datosUsuarios.push(sociosDatos)
+
+    console.log(sexo)
+    console.log(typeof sexo)
+    console.log(genero)
+
+    const socio = {
+        Usuario: nombre + " " + apellido,
+        Edad: parseInt(document.querySelector('#edad').value),
+        Peso: parseInt(document.querySelector('#peso').value),
+        Altura: parseInt(document.querySelector('#altura').value),
+        Genero: genero
+    }
+
+    datosUsuarios.push(socio)
     actulizarStorageDatos()
     formMisDatos.reset()
-    verResultados()
-
 
 }
 
@@ -146,36 +164,37 @@ if(formMisDatos){
 
 
 
+
 /********Formulas y funciones ***************/
-let peso = datosUsuarios.peso
-let altura
-let edad
-let grasa
+// let peso = datosUsuarios.peso
+// let altura
+// let edad
+// let grasa
 
-console.log(peso)
+// console.log(peso)
 
 
 
-function calculoImc(){
-    return (peso/((altura/100)*(altura/100)));
- }
+// function calculoImc(){
+//     return (peso/((altura/100)*(altura/100)));
+//  }
  
- let imc = calculoImc();
+//  let imc = calculoImc();
 
  
- function grasaMujer() {
-    return (1.2 * imc) + (0.23 * edad) - 5.4
- }
- function grasaHombre() {
-    return (1.2 * imc) + (0.23 * edad) - 10.8 - 5.4
- }
- function masaOseaMujer() {
-    return peso * 0.14
- }
- function masaOseaHombre() {
-    return peso * 0.15
- }
- function masaMuscular() {
-    return peso - (peso * (grasa / 100)) - masaOsea
- }
+//  function grasaMujer() {
+//     return (1.2 * imc) + (0.23 * edad) - 5.4
+//  }
+//  function grasaHombre() {
+//     return (1.2 * imc) + (0.23 * edad) - 10.8 - 5.4
+//  }
+//  function masaOseaMujer() {
+//     return peso * 0.14
+//  }
+//  function masaOseaHombre() {
+//     return peso * 0.15
+//  }
+//  function masaMuscular() {
+//     return peso - (peso * (grasa / 100)) - masaOsea
+//  }
  
