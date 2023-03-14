@@ -28,6 +28,23 @@ body{
     left: 50%;
     transform: translate(-50%,0)
 }
+.buttonCerrarSesion{
+    position: absolute;
+    right: 0%;
+    background-color: blue;
+    width: 100px;
+    padding: 5px;
+    font-size: 20px;
+    border-radius: 3px;
+    border: 1px solid #4b6cb7;
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+    
+}
+.buttonCerrarSesion:hover{
+    background-color: darkblue;
+}
 .tarjeta{
     background-color: skyblue;
     height: 400px;

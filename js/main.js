@@ -150,7 +150,7 @@ const ingresoDatos = (evt) => {
     actulizarStorageDatos()
     formMisDatos.reset()
     verResultados()
-    
+
 
 }
 
@@ -162,31 +162,79 @@ if(formMisDatos){
 
 /********Formulas y funciones ***************/
 
-// let pesajes = document.querySelector('.tarjetaPesajes')
+const calculos = document.querySelector('#formCalcular')
 
-// let peso = parseInt(document.querySelector('#peso').value)
+const realizarCalculos = (evt) => {
+    let nombre = document.querySelector('#nombre').value
+    let apellido = document.querySelector('#apellido').value
+    let usuario = nombre + " " + apellido
+    let edad = parseInt(document.querySelector('#edad').value);
+    let peso = parseInt(document.querySelector('#peso').value);
+    let altura = parseInt(document.querySelector('#altura').value),
+    sexo = parseInt(document.querySelector("input[name='genero']:checked").value)
+    let grasa
+    let masaOsea
+    let masaMusc
+
+    function calculoImc(){
+        return (peso/((altura/100)*(altura/100)));
+     }
+      
+     let imc = calculoImc();
+     
+      
+     function grasaMujer() {
+        return (1.2 * imc) + (0.23 * edad) - 5.4
+     }
+     function grasaHombre() {
+        return (1.2 * imc) + (0.23 * edad) - 10.8 - 5.4
+     }
+     function masaOseaMujer() {
+        return peso * 0.14
+     }
+     function masaOseaHombre() {
+        return peso * 0.15
+     }
+     function masaMuscular() {
+        return peso - (peso * (grasa / 100)) - masaOsea
+     }
 
 
-// function calculoImc(){
-//    return (peso/((altura/100)*(altura/100)));
-// }
- 
-// let imc = calculoImc();
 
- 
-// function grasaMujer() {
-//    return (1.2 * imc) + (0.23 * edad) - 5.4
-// }
-// function grasaHombre() {
-//    return (1.2 * imc) + (0.23 * edad) - 10.8 - 5.4
-// }
-// function masaOseaMujer() {
-//    return peso * 0.14
-// }
-// function masaOseaHombre() {
-//    return peso * 0.15
-// }
-// function masaMuscular() {
-//    return peso - (peso * (grasa / 100)) - masaOsea
-// }
+     if (sexo == 1){
+        grasa = grasaMujer()
+        masaOsea = masaOseaMujer()
+        masaMusc = masaMuscular()
+     }else {
+        grasa = grasaHombre()
+        masaOsea = masaOseaHombre()
+        masaMusc = masaMuscular()  
+     }
+
+     let alHtml = () => { 
+        
+        resultados.innerHTML = `<h2>${nombre}</h2>
+                <h4>Edad: ${usuario1.edad}</h4>
+                <h4>Sexo: ${usuario1.genero}</h4>
+                <h4>Peso: ${usuario.peso} </h4>
+                <h4>Altura: ${usuario1.altura} </h4>
+                <h4>Fecha del Test: ${usuario1.primerPesaje.fecha}</h4>
+                <h4>Indice de Masa Corporal: ${usuario1.primerPesaje.IMC}h4>
+                <h4>Porcentaje de grasa corporal: ${usuario1.primerPesajgrasaCorporal}%</h4>
+                <h4>Peso de la masa ósea y orgánica: ${usuario1.primerPesajmasaOsea} Kg</h4>
+                <h4>Peso de la masa muscular: ${usuario1.primerPesajmasaMusc} Kg</h4>`;
+
+         }
+
+         alHtml()
+
+}
+
+
+
+if(calculos){
+    calculos.addEventListener('input', realizarCalculos)
+}
+
+
  
