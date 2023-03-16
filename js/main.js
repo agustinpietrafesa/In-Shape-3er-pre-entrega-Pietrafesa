@@ -77,10 +77,10 @@ const inicioSesion = (evt) => {
         welcome()
         formInicioSesion.reset()
        }else{
-        alert("mal")
+        Swal.fire('Usuario o contraseña equivocado')
        }
        }else{
-        alert("mal")
+        Swal.fire('Usuario o contraseña equivocado')
        }
     }
 
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const ingresoDatos = (evt) => {
     evt.preventDefault()
 
-
+    let fecha = new Date()
     let nombre = document.querySelector('#nombre').value
     let apellido = document.querySelector('#apellido').value
     let sexo = parseInt(document.querySelector("input[name='genero']:checked").value)
@@ -135,26 +135,26 @@ const ingresoDatos = (evt) => {
 
 
         function calculoImc(){
-            return (peso/((altura/100)*(altura/100)));
+            return ((peso/((altura/100)*(altura/100)))).toFixed(2);
          }
           
          let imc = calculoImc();
          
           
          function grasaMujer() {
-            return (1.2 * imc) + (0.23 * edad) - 5.4
+            return ((1.2 * imc) + (0.23 * edad) - 5.4).toFixed(2)
          }
          function grasaHombre() {
-            return (1.2 * imc) + (0.23 * edad) - 10.8 - 5.4
+            return ((1.2 * imc) + (0.23 * edad) - 10.8 - 5.4).toFixed(2)
          }
          function masaOseaMujer() {
-            return peso * 0.14
+            return (peso * 0.14).toFixed(2)
          }
          function masaOseaHombre() {
-            return peso * 0.15
+            return (peso * 0.15).toFixed(2)
          }
          function masaMuscular() {
-            return peso - (peso * (grasa / 100)) - masaOsea
+            return (peso - (peso * (grasa / 100)) - masaOsea).toFixed(2)
          }
     
     
@@ -176,6 +176,7 @@ const ingresoDatos = (evt) => {
     /******Guardar datos del socio ******/
     const socio = {
         Usuario: nombre + " " + apellido,
+        Fecha: fecha.toLocaleDateString(),
         Edad: parseInt(document.querySelector('#edad').value),
         Peso: parseInt(document.querySelector('#peso').value),
         Altura: parseInt(document.querySelector('#altura').value),
@@ -194,9 +195,6 @@ const ingresoDatos = (evt) => {
         actulizarStorageDatos()
         formMisDatos.reset()
         verResultados()
-        alHtml() 
-
-
 }
 
 if(formMisDatos){
@@ -212,21 +210,81 @@ let ultimoUsuario = (nuestrosUsuarios.length - 1)
 
     /*******Mostrar en el html  *********/
     
-    let alHtml = () => { 
-    
+const formCalcular = document.querySelector('#formCalcular')
+
+const realizarCalculos = (evt) => {
+    evt.preventDefault()
+
+    function alHtml() {
         const resultados = document.querySelector('#resultados');
-    
-        resultados.innerHTML = `<h3>${nuestrosUsuarios[ultimoUsuario].Usuario}</h3>
-                     <h4>Edad: ${nuestrosUsuarios[ultimoUsuario].Edad}</h4>
-                     <h4>Sexo: ${nuestrosUsuarios[ultimoUsuario].Genero}</h4>
-                     <h4>Peso: ${nuestrosUsuarios[ultimoUsuario].Peso} </h4>
+
+        resultados.innerHTML = `<h2 class="resultadosTitulo">Resultados</h2>
+                   <h3>${nuestrosUsuarios[ultimoUsuario].Usuario}</h3>
+                   <h4>Fecha del test: ${nuestrosUsuarios[ultimoUsuario].Fecha}</h4>
+                   <h4>Edad: ${nuestrosUsuarios[ultimoUsuario].Edad}</h4>
+                   <h4>Sexo: ${nuestrosUsuarios[ultimoUsuario].Genero}</h4>
+                   <h4>Peso: ${nuestrosUsuarios[ultimoUsuario].Peso} </h4>
                      <h4>Altura: ${nuestrosUsuarios[ultimoUsuario].Altura} Cm</h4>
                      <h4>Indice de Masa Corporal: ${nuestrosUsuarios[ultimoUsuario].IMC}</h4>
                      <h4>Porcentaje de grasa corporal: ${nuestrosUsuarios[ultimoUsuario].Grasa}%</h4>
                      <h4>Peso de la masa ósea y orgánica: ${nuestrosUsuarios[ultimoUsuario].MasaOsea} Kg</h4>
                      <h4>Peso de la masa muscular: ${nuestrosUsuarios[ultimoUsuario].MasaMusc} Kg</h4>`;
+   
+            
+    }
+
+
+    alHtml()
+}
+
+
+
+if(formCalcular){
+    formCalcular.addEventListener('submit', realizarCalculos)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***  let alHtml = () => { 
     
-              }
-    
-    
-alHtml()
+     const resultados = document.querySelector('#resultados');
+
+     resultados.innerHTML = `<h2 class="resultadosTitulo">Resultados</h2>
+                <h3>${nuestrosUsuarios[ultimoUsuario].Usuario}</h3>
+                <h4>Fecha del test: ${nuestrosUsuarios[ultimoUsuario].Fecha}</h4>
+                <h4>Edad: ${nuestrosUsuarios[ultimoUsuario].Edad}</h4>
+                <h4>Sexo: ${nuestrosUsuarios[ultimoUsuario].Genero}</h4>
+                <h4>Peso: ${nuestrosUsuarios[ultimoUsuario].Peso} </h4>
+                  <h4>Altura: ${nuestrosUsuarios[ultimoUsuario].Altura} Cm</h4>
+                  <h4>Indice de Masa Corporal: ${nuestrosUsuarios[ultimoUsuario].IMC}</h4>
+                  <h4>Porcentaje de grasa corporal: ${nuestrosUsuarios[ultimoUsuario].Grasa}%</h4>
+                  <h4>Peso de la masa ósea y orgánica: ${nuestrosUsuarios[ultimoUsuario].MasaOsea} Kg</h4>
+                  <h4>Peso de la masa muscular: ${nuestrosUsuarios[ultimoUsuario].MasaMusc} Kg</h4>`;
+
+           }
+
+
+ alHtml()
+***/

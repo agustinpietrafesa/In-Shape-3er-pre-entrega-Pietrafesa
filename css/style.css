@@ -5,9 +5,11 @@
 }
 body{
     background-color: #4b6cb7;
-    background: linear-gradient(to right, #182848, #4b6cb7);
+    background: linear-gradient(to right,  #182848, #4b6cb7);
     font-style: normal;
+
 }
+
 
 .titulo{
     position: relative;
@@ -72,7 +74,7 @@ body{
 }
 .tarjetaPesajes{
     background-color: skyblue;
-    height: 450px;
+    height: 100%;
     width: 350px;
     margin: 0 auto;
     border-radius: 5px;
@@ -191,21 +193,29 @@ body{
 .botonGuardarDatos:hover{
     background-color: darkblue;
 }
-.botonRealizarCalculos{
+.botonCalcular{
     background-color: blue;
     color: white;
-    margin-top: 40px;
+    margin-top: 15px;
 }
-.botonRealizarCalculos:hover{
+.botonCalcular:hover{
     background-color: darkblue;
 }
 
 #formCalcular{
-    text-align: center;
+    text-align: start;
 }
 
 
 #resultados > h4{
     color: blue;
     padding: 5px;
+}
+
+.resultadosTitulo{
+    text-align: center;
+    margin-bottom: 15px;
+}
+.textoCalculos{
+    text-align: center;
 }
