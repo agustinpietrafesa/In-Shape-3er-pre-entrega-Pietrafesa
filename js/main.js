@@ -169,7 +169,18 @@ const ingresoDatos = (evt) => {
             masaMusc = masaMuscular()  
          }
 
-    
+    /**********Resultados de los indices corporales *************/
+let resultadoImc
+
+if(imc <= 18.5){
+    resultadoImc = "Según el IMC, tu peso es normal"
+}else if((imc > 18.5) && (imc <= 25)){
+    resultadoImc = "Según el IMC, tu peso es normal"
+}else if((imc > 25.1) && (imc <= 29.9)){
+    resultadoImc = "Según el IMC, tu peso es superior a lo normal"
+}else{
+    resultadoImc = "Según el IMC, tu indice se encuentra dentro de la franja de obesidad."
+}
 
 
 
@@ -182,6 +193,7 @@ const ingresoDatos = (evt) => {
         Altura: parseInt(document.querySelector('#altura').value),
         Genero: genero,
         IMC: imc,
+        Resultado: resultadoImc,
         Grasa: grasa,
         MasaOsea: masaOsea,
         MasaMusc: masaMusc
@@ -203,8 +215,13 @@ if(formMisDatos){
 
 
 let nuestrosUsuarios = JSON.parse(localStorage.getItem('datosUsuarios'))
-let ultimoUsuario = (nuestrosUsuarios.length - 1)
+let ultimoUsuario 
 
+if(nuestrosUsuarios == null){
+    ultimoUsuario = ""
+}else{
+    ultimoUsuario = (nuestrosUsuarios.length - 1)
+}
 
 
 
@@ -214,6 +231,14 @@ const formCalcular = document.querySelector('#formCalcular')
 
 const realizarCalculos = (evt) => {
     evt.preventDefault()
+
+    function ingresaDatos() {
+        if(nuestrosUsuarios == null){
+            Swal.fire('Primero ingresa tus datos')
+        }else{
+            alHtml()
+        }
+    }
 
     function alHtml() {
         const resultados = document.querySelector('#resultados');
@@ -226,6 +251,7 @@ const realizarCalculos = (evt) => {
                    <h4>Peso: ${nuestrosUsuarios[ultimoUsuario].Peso} </h4>
                      <h4>Altura: ${nuestrosUsuarios[ultimoUsuario].Altura} Cm</h4>
                      <h4>Indice de Masa Corporal: ${nuestrosUsuarios[ultimoUsuario].IMC}</h4>
+                     <h5>${nuestrosUsuarios[ultimoUsuario].Resultado}</h5>
                      <h4>Porcentaje de grasa corporal: ${nuestrosUsuarios[ultimoUsuario].Grasa}%</h4>
                      <h4>Peso de la masa ósea y orgánica: ${nuestrosUsuarios[ultimoUsuario].MasaOsea} Kg</h4>
                      <h4>Peso de la masa muscular: ${nuestrosUsuarios[ultimoUsuario].MasaMusc} Kg</h4>`;
@@ -233,8 +259,8 @@ const realizarCalculos = (evt) => {
             
     }
 
+    ingresaDatos()
 
-    alHtml()
 }
 
 

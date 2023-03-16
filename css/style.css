@@ -31,23 +31,7 @@ body{
     left: 50%;
     transform: translate(-50%,0)
 }
-.buttonCerrarSesion{
-    position: absolute;
-    right: 0%;
-    background-color: blue;
-    width: 100px;
-    padding: 5px;
-    font-size: 20px;
-    border-radius: 3px;
-    border: 1px solid #4b6cb7;
-    color: white;
-    text-decoration: none;
-    margin-right: 15px;
-    
-}
-.buttonCerrarSesion:hover{
-    background-color: darkblue;
-}
+
 .tarjeta{
     background-color: skyblue;
     height: 400px;
@@ -79,6 +63,7 @@ body{
     margin: 0 auto;
     border-radius: 5px;
     justify-content: center;
+    margin-bottom: 30px;
 }
 .tituloTarjeta{
     text-align: center;
@@ -184,7 +169,24 @@ body{
 .buttonAtras:hover{
     background-color: darkblue;
 }
-
+.buttonCerrarSesion{
+    position: absolute;
+    right: 0%;
+    background-color: blue;
+    width: 80px;
+    height: 100%;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 3px;
+    border: 1px solid #4b6cb7;
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+    
+}
+.buttonCerrarSesion:hover{
+    background-color: darkblue;
+}
 .botonGuardarDatos{
     background-color: blue;
     color: white;
@@ -201,17 +203,16 @@ body{
 .botonCalcular:hover{
     background-color: darkblue;
 }
-
 #formCalcular{
     text-align: start;
 }
-
-
 #resultados > h4{
     color: blue;
     padding: 5px;
 }
-
+#resultados > h5{
+    padding: 5px;
+}
 .resultadosTitulo{
     text-align: center;
     margin-bottom: 15px;
