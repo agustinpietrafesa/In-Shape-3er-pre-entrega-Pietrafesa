@@ -20,6 +20,15 @@ const welcome = () => {
 const verResultados = () => {
     location.href = "misPesajes.html"
 }
+const alertBienvenida = () => {
+    Swal.fire({
+        icon: 'success',
+        title: 'Bienvenido',
+        text: '¡Vamos!'
+      }).then(function() {
+        location.href = "inicio.html"
+    });
+}
 
 document.addEventListener('DOMContentLoaded', () => {
    if(JSON.parse(localStorage.getItem('socios')) != null){
@@ -46,9 +55,9 @@ const crearSocio = (evt) => {
         Password: password
     }
 
+    alertBienvenida()
     socios.push(socio)
     actulizarStorage()
-    welcome()
     formRegistro.reset()
 }
 
@@ -271,6 +280,23 @@ if(formCalcular){
 
 
 
+/************Agregando Sweet alert ***********/
+
+
+
+
+
+
+const registrarse = document.querySelector('#formRegistrarse')
+
+if (registrarse){
+    Swal.fire({
+      icon: 'info',
+      title: 'Registro',
+      text: 'Completa tus datos y comencemos!!'
+    })
+}
+ 
 
 
 
@@ -286,31 +312,3 @@ if(formCalcular){
 
 
 
-
-
-
-
-
-
-
-/***  let alHtml = () => { 
-    
-     const resultados = document.querySelector('#resultados');
-
-     resultados.innerHTML = `<h2 class="resultadosTitulo">Resultados</h2>
-                <h3>${nuestrosUsuarios[ultimoUsuario].Usuario}</h3>
-                <h4>Fecha del test: ${nuestrosUsuarios[ultimoUsuario].Fecha}</h4>
-                <h4>Edad: ${nuestrosUsuarios[ultimoUsuario].Edad}</h4>
-                <h4>Sexo: ${nuestrosUsuarios[ultimoUsuario].Genero}</h4>
-                <h4>Peso: ${nuestrosUsuarios[ultimoUsuario].Peso} </h4>
-                  <h4>Altura: ${nuestrosUsuarios[ultimoUsuario].Altura} Cm</h4>
-                  <h4>Indice de Masa Corporal: ${nuestrosUsuarios[ultimoUsuario].IMC}</h4>
-                  <h4>Porcentaje de grasa corporal: ${nuestrosUsuarios[ultimoUsuario].Grasa}%</h4>
-                  <h4>Peso de la masa ósea y orgánica: ${nuestrosUsuarios[ultimoUsuario].MasaOsea} Kg</h4>
-                  <h4>Peso de la masa muscular: ${nuestrosUsuarios[ultimoUsuario].MasaMusc} Kg</h4>`;
-
-           }
-
-
- alHtml()
-***/
