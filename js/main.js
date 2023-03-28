@@ -29,9 +29,10 @@ const alertBienvenida = () => {
         timer: 1500
       }).then(function() {
         location.href = "inicio.html"
-    }).then(function() {
-    *//////////////////    prompt("ingrese algo")*************************//
-    }) 
+    })
+    // .then(function() {
+    // *//////////////////    prompt("ingrese algo")*************************//
+    // }) 
 
     };
 
