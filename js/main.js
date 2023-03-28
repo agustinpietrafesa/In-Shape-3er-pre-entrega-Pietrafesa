@@ -24,11 +24,18 @@ const alertBienvenida = () => {
     Swal.fire({
         icon: 'success',
         title: 'Bienvenido',
-        text: '¡Vamos!'
+        text: '¡Vamos!',
+        showConfirmButton: false,
+        timer: 1500
       }).then(function() {
         location.href = "inicio.html"
-    });
-}
+    }).then(function() {
+    *//////////////////    prompt("ingrese algo")*************************//
+    }) 
+
+    };
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
    if(JSON.parse(localStorage.getItem('socios')) != null){
@@ -283,20 +290,15 @@ if(formCalcular){
 /************Agregando Sweet alert ***********/
 
 
-
-
-
-
-const registrarse = document.querySelector('#formRegistrarse')
-
-if (registrarse){
+if (formRegistro){
     Swal.fire({
       icon: 'info',
       title: 'Registro',
       text: 'Completa tus datos y comencemos!!'
     })
 }
- 
+
+
 
 
 
