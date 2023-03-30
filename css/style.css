@@ -266,4 +266,25 @@ body{
     border-radius: 5px;
     justify-content: center;
  }
- 
+
+ .pizarra > h3{
+    padding-top: 25px;
+    text-align: center;
+    color: darkblue;
+    font-size: 22px;
+ }
+ .botonVolver{
+    background-color: blue;
+    width: 60px;
+    padding: 5px;
+    font-size: 15px;
+    border-radius: 3px;
+    border: 1px solid #4b6cb7;
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+
+}
+.botonVolver:hover{
+    background-color: darkblue;
+}
