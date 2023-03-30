@@ -424,14 +424,6 @@ Swal.fire({
         const contenido = document.querySelector("#nuestrasRutinas")
         let rutina = rutinas.filter((el) => el.entrenamiento === tipoEntrenamiento)
         let html = "";
-        let valores = `       
-        <form class="formRutinas">
-        <h3>Tipos de entrenamiento:</h3>
-        <button class="botonRutinas" id="aerobico" title="Ejercicio de resistencia y cardio">Aeróbico</button>
-        <button class="botonRutinas" id="fuerza" title="Ejercicios relacionados a la fuerza fisica y muscular ">Fuerza</button>
-        <button class="botonRutinas" id="funcional" title="Combinacion de fuerza y cardio, con movimientos similares a los de la vida diaria">Funcional</button>
-        </form>`
-
 
      if(rutina !== ""){
          let dificultadRutina = rutina.filter((el) => el.dificultad === nivel)
@@ -449,7 +441,7 @@ Swal.fire({
      const btnAtras = document.querySelector("#volver")
 
      btnAtras.addEventListener('click', () => {
-        contenido.innerHTML = valores
+        location.href = "rutinas.html"
      })
 
  }
