@@ -223,3 +223,38 @@ body{
 .textoCalculos{
     text-align: center;
 }
+.formRutinas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+
+}
+.botonRutinas{
+    background-color: blue;
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 3px;
+    border: 1px solid #4b6cb7;
+    color: white;
+    text-decoration: none;
+    margin: 25px;
+
+}
+
+.botonRutinas:hover{
+    background-color: darkblue;
+}
+
+.formRutinas > h3{
+    color: darkblue;
+    font-size: 22px;
+}
+.tarjetaDatos > h3{
+    color: darkblue;
+    padding-bottom: 5px;
+    font-size: 25px;
+    text-align: center;
+    padding-top: 25px;
+}

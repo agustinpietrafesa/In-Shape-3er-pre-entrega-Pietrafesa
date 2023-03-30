@@ -30,10 +30,6 @@ const alertBienvenida = () => {
       }).then(function() {
         location.href = "inicio.html"
     })
-    // .then(function() {
-    // *//////////////////    prompt("ingrese algo")*************************//
-    // }) 
-
     };
 
 
@@ -91,13 +87,27 @@ const inicioSesion = (evt) => {
 
     if(usuario) {
        if(usuario.Password === passwordIngresada){
-        welcome()
         formInicioSesion.reset()
+        Swal.fire({
+            icon: 'success',
+            title: 'Bienvenido',
+            text: '¡Que bueno verte de nuevo!',
+            showConfirmButton: false,
+            timer: 1500
+          }).then(function() {
+            location.href = "inicio.html"
+          })
        }else{
-        Swal.fire('Usuario o contraseña equivocado')
+        Swal.fire({
+            icon: 'error',
+            title: 'Usuario o contraseña incorrectos'
+          })
        }
        }else{
-        Swal.fire('Usuario o contraseña equivocado')
+        Swal.fire({
+            icon: 'error',
+            title: 'Usuario o contraseña incorrectos'
+          })
        }
     }
 
@@ -252,6 +262,9 @@ const realizarCalculos = (evt) => {
     function ingresaDatos() {
         if(nuestrosUsuarios == null){
             Swal.fire('Primero ingresa tus datos')
+            .then(function() {
+                location.href = "misDatos.html"
+            })
         }else{
             alHtml()
         }
@@ -290,7 +303,6 @@ if(formCalcular){
 
 /************Agregando Sweet alert ***********/
 
-
 if (formRegistro){
     Swal.fire({
       icon: 'info',
@@ -300,13 +312,72 @@ if (formRegistro){
 }
 
 
+/***********Agegando fetch  ***************/
+
+const aerobico = document.querySelector('#aerobico')
+const fuerza = document.querySelector('#fuerza')
+const funcional = document.querySelector('#funcional')
+
+aerobico.addEventListener('click', (evt) => {
+     evt.preventDefault()
+Swal.fire({
+    title: 'Que nivel estas buscando?',
+    showDenyButton: true,
+    showCancelButton: true,
+    confirmButtonText: 'Avanzado',
+    denyButtonText: `Principiante`,
+    denyButtonColor: "blue",
+    confirmButtonColor: "blue"
+  }).then((result) => {
+    /* Read more about isConfirmed, isDenied below */
+    if (result.isConfirmed) {
+      Swal.fire('estas picante man')
+    } else if (result.isDenied) {
+      Swal.fire('pone huevo puto')
+    }
+  })
+})
 
 
+fuerza.addEventListener('click', (evt) => {
+    evt.preventDefault()
+Swal.fire({
+   title: 'Que nivel estas buscando?',
+   showDenyButton: true,
+   showCancelButton: true,
+   confirmButtonText: 'Avanzado',
+   denyButtonText: `Principiante`,
+   denyButtonColor: "blue",
+   confirmButtonColor: "blue"
+ }).then((result) => {
+   /* Read more about isConfirmed, isDenied below */
+   if (result.isConfirmed) {
+     Swal.fire('estas picante man')
+   } else if (result.isDenied) {
+     Swal.fire('pone huevo puto')
+   }
+ })
+})
 
-
-
-
-
+funcional.addEventListener('click', (evt) => {
+    evt.preventDefault()
+Swal.fire({
+   title: 'Que nivel estas buscando?',
+   showDenyButton: true,
+   showCancelButton: true,
+   confirmButtonText: 'Avanzado',
+   denyButtonText: `Principiante`,
+   denyButtonColor: "blue",
+   confirmButtonColor: "blue"
+ }).then((result) => {
+   /* Read more about isConfirmed, isDenied below */
+   if (result.isConfirmed) {
+     Swal.fire('estas picante man')
+   } else if (result.isDenied) {
+     Swal.fire('pone huevo puto')
+   }
+ })
+})
 
 
 

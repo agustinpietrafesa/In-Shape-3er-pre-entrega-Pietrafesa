@@ -26,24 +26,24 @@
 
     <div class="tarjetaDatos">
         
-        <p class="tituloTarjeta">Completa tus datos:</p>
+        <h3>Completa tus datos:</h3>
 
         <form class="formularios" id="formMisDatos">
                
             
-            <input type="text" name="nombre" id="nombre" placeholder="Ingresa tu nombre">
-            <input type="text" name="apellido" id="apellido" placeholder="Ingresa tu apellido">
-            <input type="text" name="edad" id="edad" placeholder="Ingresa tu edad">
-            <input type="text" name="peso" id="peso" placeholder="Ingresa tu peso en KG">
-            <input type="text" name="altura" id="altura" placeholder="Ingresa tu altura en CM">
+            <input type="text" name="nombre" id="nombre" required placeholder="Ingresa tu nombre">
+            <input type="text" name="apellido" id="apellido" required placeholder="Ingresa tu apellido">
+            <input type="text" name="edad" id="edad" required placeholder="Ingresa tu edad">
+            <input type="text" name="peso" id="peso" required placeholder="Ingresa tu peso en KG">
+            <input type="text" name="altura" id="altura" required placeholder="Ingresa tu altura en CM">
             <label>Masculino
-                <input type="radio" name="genero" class="sexo" value="2">
+                <input type="radio" name="genero" class="sexo" required value="2">
             </label>
             <label>Femenino
-                <input type="radio" name="genero" class="sexo" value="1">
+                <input type="radio" name="genero" class="sexo" required value="1">
             </label>
             <label>Otros
-                <input type="radio" name="genero" class="sexo" value="1">
+                <input type="radio" name="genero" class="sexo" required value="1">
             </label>
             <input class="botonGuardarDatos" type="submit" value="Guardar Datos">
 
