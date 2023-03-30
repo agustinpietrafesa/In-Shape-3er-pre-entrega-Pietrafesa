@@ -318,25 +318,55 @@ const aerobico = document.querySelector('#aerobico')
 const fuerza = document.querySelector('#fuerza')
 const funcional = document.querySelector('#funcional')
 
+// aerobico.addEventListener('click', (evt) => {
+//      evt.preventDefault()
+// Swal.fire({
+//     title: 'Que nivel estas buscando?',
+//     showDenyButton: true,
+//     showCancelButton: true,
+//     confirmButtonText: 'Avanzado',
+//     denyButtonText: `Principiante`,
+//     denyButtonColor: "blue",
+//     confirmButtonColor: "blue"
+//   }).then((result) => {
+//     /* Read more about isConfirmed, isDenied below */
+//     if (result.isConfirmed) {
+//       Swal.fire('estas picante man')
+//     } else if (result.isDenied) {
+//       Swal.fire('pone huevo puto')
+//     }
+//   })
+// })
+
+
 aerobico.addEventListener('click', (evt) => {
-     evt.preventDefault()
-Swal.fire({
-    title: 'Que nivel estas buscando?',
-    showDenyButton: true,
-    showCancelButton: true,
-    confirmButtonText: 'Avanzado',
-    denyButtonText: `Principiante`,
-    denyButtonColor: "blue",
-    confirmButtonColor: "blue"
-  }).then((result) => {
-    /* Read more about isConfirmed, isDenied below */
-    if (result.isConfirmed) {
-      Swal.fire('estas picante man')
-    } else if (result.isDenied) {
-      Swal.fire('pone huevo puto')
-    }
-  })
+    evt.preventDefault()
+    fetch("prueba.txt")
+    .then((res)=>{
+         console.log(res)
+    })
+    .then((rutinas)=>{
+        console.log(rutinas)
+    })
+    .catch((err)=> console.log(err))
+
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 fuerza.addEventListener('click', (evt) => {
@@ -352,12 +382,24 @@ Swal.fire({
  }).then((result) => {
    /* Read more about isConfirmed, isDenied below */
    if (result.isConfirmed) {
-     Swal.fire('estas picante man')
+     fetch("rutinas.json")
+     .then((res) => {
+        return res.json()
+     })
+     .then((rutinas) => {
+        console.log(rutinas)
+     })
+     .catch((err)=> {
+        console.log(err)
+     })
    } else if (result.isDenied) {
      Swal.fire('pone huevo puto')
    }
  })
 })
+
+
+
 
 funcional.addEventListener('click', (evt) => {
     evt.preventDefault()
