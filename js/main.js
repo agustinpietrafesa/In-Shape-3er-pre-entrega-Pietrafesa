@@ -318,59 +318,37 @@ const aerobico = document.querySelector('#aerobico')
 const fuerza = document.querySelector('#fuerza')
 const funcional = document.querySelector('#funcional')
 
-// aerobico.addEventListener('click', (evt) => {
-//      evt.preventDefault()
-// Swal.fire({
-//     title: 'Que nivel estas buscando?',
-//     showDenyButton: true,
-//     showCancelButton: true,
-//     confirmButtonText: 'Avanzado',
-//     denyButtonText: `Principiante`,
-//     denyButtonColor: "blue",
-//     confirmButtonColor: "blue"
-//   }).then((result) => {
-//     /* Read more about isConfirmed, isDenied below */
-//     if (result.isConfirmed) {
-//       Swal.fire('estas picante man')
-//     } else if (result.isDenied) {
-//       Swal.fire('pone huevo puto')
-//     }
-//   })
-// })
+let nivel 
+let tipoEntrenamiento 
+
+if(aerobico){ 
 
 
-aerobico.addEventListener('click', (evt) => {
-    evt.preventDefault()
-    fetch("prueba.txt")
-    .then((res)=>{
-         console.log(res)
-    })
-    .then((rutinas)=>{
-        console.log(rutinas)
-    })
-    .catch((err)=> console.log(err))
-
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ aerobico.addEventListener('click', (evt) => {
+      evt.preventDefault()
+ Swal.fire({
+     title: 'Que nivel estas buscando?',
+     showDenyButton: true,
+     showCancelButton: true,
+     confirmButtonText: 'Avanzado',
+     denyButtonText: `Principiante`,
+     denyButtonColor: "blue",
+     confirmButtonColor: "blue"
+   }).then((result) => {
+     /* Read more about isConfirmed, isDenied below */
+     if (result.isConfirmed) {
+       Swal.fire('estas picante man')
+     } else if (result.isDenied) {
+       Swal.fire('pone huevo puto')
+     }
+   })
+ })
 
 
 fuerza.addEventListener('click', (evt) => {
     evt.preventDefault()
+    tipoEntrenamiento = "fuerza"
+
 Swal.fire({
    title: 'Que nivel estas buscando?',
    showDenyButton: true,
@@ -380,20 +358,31 @@ Swal.fire({
    denyButtonColor: "blue",
    confirmButtonColor: "blue"
  }).then((result) => {
-   /* Read more about isConfirmed, isDenied below */
+
    if (result.isConfirmed) {
-     fetch("rutinas.json")
+    nivel = "avanzado",
+     fetch("../rutinas.json")
      .then((res) => {
         return res.json()
      })
      .then((rutinas) => {
-        console.log(rutinas)
+        selectorRutina(rutinas)
      })
      .catch((err)=> {
         console.log(err)
      })
    } else if (result.isDenied) {
-     Swal.fire('pone huevo puto')
+    nivel = "principiante",
+    fetch("../rutinas.json")
+    .then((res) => {
+       return res.json()
+    })
+    .then((rutinas) => {
+       selectorRutina(rutinas)
+    })
+    .catch((err)=> {
+       console.log(err)
+    })
    }
  })
 })
@@ -425,6 +414,35 @@ Swal.fire({
 
 
 
+
+
+ function selectorRutina(rutinas){
+
+     const entrenamiento = rutinas.find((el) => el.entrenamiento === tipoEntrenamiento)
+     const dificultad = rutinas.find((el) => el.dificultad === nivel)
+
+        const contenido = document.querySelector("#nuestrasRutinas")
+        let rutina = rutinas.filter((el) => el.entrenamiento === tipoEntrenamiento)
+        let html = "";
+
+
+
+     if(rutina !== ""){
+         let dificultadRutina = rutina.filter((el) => el.dificultad === nivel)
+         for(const rutina of dificultadRutina){
+            html = `
+            <div class="pizarra">
+            <h3>${rutina.ejercicios}</h3>
+
+            </div>`
+         }
+     }
+     contenido.innerHTML = html
+
+ }
+
+
+}
 
 
 

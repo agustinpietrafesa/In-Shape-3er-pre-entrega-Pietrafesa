@@ -258,3 +258,12 @@ body{
     text-align: center;
     padding-top: 25px;
 }
+.pizarra{
+    background-color: skyblue;
+    height: 400px;
+    width: 350px;
+    margin: 0 auto;
+    border-radius: 5px;
+    justify-content: center;
+ }
+ 

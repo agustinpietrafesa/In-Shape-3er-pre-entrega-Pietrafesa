@@ -3,31 +3,31 @@
         "entrenamiento": "aerobico",
         "dificultad": "principiante",
         "ejercicios": "correr 10km"
-
-    }
+    },
     {
         "entrenamiento": "aerobico",
         "dificultad": "avanzado",
         "ejercicios": "correr 15km"
 
-    }
+    },
     {
         "entrenamiento": "fuerza",
         "dificultad": "principiante",
         "ejercicios": "10 push ups"
 
-    }
+    },
     {
         "entrenamiento": "fuerza",
         "dificultad": "avanzado",
         "ejercicios": "50 push ups"
 
-    }    {
+    },   
+    {
         "entrenamiento": "funcional",
         "dificultad": "principiante",
         "ejercicios": "correr 5km y 10 push ups"
 
-    }
+    },
     {
         "entrenamiento": "funcional",
         "dificultad": "avanzado",
