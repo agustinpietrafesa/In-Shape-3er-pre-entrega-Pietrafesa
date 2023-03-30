@@ -40,12 +40,12 @@ body{
     border-radius: 5px;
     justify-content: center;
 }
-@media (max-width: 576px) {
+/* @media (max-width: 576px) {
     .tarjeta{
         height: 350px;
          width: 280px;
 }
-}
+} */
 .tarjetaInicio{
     background-color: skyblue;
     height: 240px;
