@@ -268,10 +268,25 @@ body{
  }
 
  .pizarra > h3{
+    text-decoration: underline;
     padding-top: 25px;
     text-align: center;
     color: darkblue;
     font-size: 22px;
+ }
+ .pizarra > h4{
+    padding-top: 10px;
+    text-align: center;
+    color: darkblue;
+    font-size: 17px;
+ }
+
+ .pizarra > h6{
+    padding: 15px;
+    text-align: center;
+    color: darkblue;
+    font-size: 13px;
+    text-decoration: underline;
  }
  .botonVolver{
     background-color: blue;

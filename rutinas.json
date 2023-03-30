@@ -2,36 +2,59 @@
     {
         "entrenamiento": "aerobico",
         "dificultad": "principiante",
-        "ejercicios": "correr 10km"
+        "ejercicios": {
+            "estiramiento": "Posteriores-Gemelos-Cuadriceps",
+            "calentamiento": "Skipping-Talones atras-Sentadillas cortas",
+            "principal": "4kms manteniendo un ritmo llevadero"
+        }
     },
     {
         "entrenamiento": "aerobico",
         "dificultad": "avanzado",
-        "ejercicios": "correr 15km"
+        "ejercicios": {
+            "estiramiento": "Posteriores-Gemelos-Cuadriceps",
+            "calentamiento": "Skipping-Talones atras-Sentadillas cortas",
+            "principal": "10kms manteniendo un ritmo elevado que puedas mantener"
+        }
 
     },
     {
         "entrenamiento": "fuerza",
         "dificultad": "principiante",
-        "ejercicios": "10 push ups"
+        "ejercicios": {
+            "estiramiento": "Biceps-Triceps-Hombros-Gluteos-Cuadriceps",
+            "calentamiento": "Push Ups-Sentadillas cortas-Movilidad de cadera",
+            "principal": "Sentadillas-Planchas laterales-Push ups-Abdominales"
+        }
 
     },
     {
         "entrenamiento": "fuerza",
         "dificultad": "avanzado",
-        "ejercicios": "50 push ups"
-
+        "ejercicios": {
+            "estiramiento": "Biceps-Triceps-Hombros-Gluteos-Cuadriceps",
+            "calentamiento": "Push Ups-Sentadillas cortas-Movilidad de cadera",
+            "principal": "Sentadillas-Planchas laterales y frontales-Push ups con despegue-Estocadas con salto-Abdominales"
+        }
     },   
     {
         "entrenamiento": "funcional",
         "dificultad": "principiante",
-        "ejercicios": "correr 5km y 10 push ups"
+        "ejercicios": {
+            "estiramiento": "Biceps-Hombros-Gluteos-Cuadriceps-Gemelos-Posteriores",
+            "calentamiento": "Rodillas arriba-Talones a la cola-Puente de gluteo-Sentadilla estatica-Plancha lateral",
+            "principal": "Peso muerto-Media Burpee (sin salto)-Sentadillas-Planchas-Estocada"
+        }
 
     },
     {
         "entrenamiento": "funcional",
         "dificultad": "avanzado",
-        "ejercicios": "correr 10km y 20 push ups"
+        "ejercicios": {
+            "estiramiento": "Biceps-Hombros-Gluteos-Cuadriceps-Gemelos-Posteriores",
+            "calentamiento": "Rodillas arriba-Talones a la cola-Puente de gluteo-Sentadilla estatica-Plancha lateral",
+            "principal": "Peso muerto unilateral-Burpee completa-Sentadillas-Planchas-Estocada con salto"
+        }
 
     }
     

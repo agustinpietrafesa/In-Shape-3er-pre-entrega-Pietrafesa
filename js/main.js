@@ -326,23 +326,45 @@ if(aerobico){
 
  aerobico.addEventListener('click', (evt) => {
       evt.preventDefault()
- Swal.fire({
-     title: 'Que nivel estas buscando?',
-     showDenyButton: true,
-     showCancelButton: true,
-     confirmButtonText: 'Avanzado',
-     denyButtonText: `Principiante`,
-     denyButtonColor: "blue",
-     confirmButtonColor: "blue"
-   }).then((result) => {
-     /* Read more about isConfirmed, isDenied below */
-     if (result.isConfirmed) {
-       Swal.fire('estas picante man')
-     } else if (result.isDenied) {
-       Swal.fire('pone huevo puto')
-     }
-   })
- })
+      tipoEntrenamiento = "aerobico"
+
+      Swal.fire({
+         title: 'Que nivel estas buscando?',
+         showDenyButton: true,
+         showCancelButton: true,
+         confirmButtonText: 'Avanzado',
+         denyButtonText: `Principiante`,
+         denyButtonColor: "blue",
+         confirmButtonColor: "blue"
+       }).then((result) => {
+      
+         if (result.isConfirmed) {
+          nivel = "avanzado",
+           fetch("../rutinas.json")
+           .then((res) => {
+              return res.json()
+           })
+           .then((rutinas) => {
+              selectorRutina(rutinas)
+           })
+           .catch((err)=> {
+              console.log(err)
+           })
+         } else if (result.isDenied) {
+          nivel = "principiante",
+          fetch("../rutinas.json")
+          .then((res) => {
+             return res.json()
+          })
+          .then((rutinas) => {
+             selectorRutina(rutinas)
+          })
+          .catch((err)=> {
+             console.log(err)
+          })
+         }
+       })
+      })
 
 
 fuerza.addEventListener('click', (evt) => {
@@ -392,6 +414,8 @@ Swal.fire({
 
 funcional.addEventListener('click', (evt) => {
     evt.preventDefault()
+    tipoEntrenamiento = "funcional"
+
 Swal.fire({
    title: 'Que nivel estas buscando?',
    showDenyButton: true,
@@ -401,18 +425,34 @@ Swal.fire({
    denyButtonColor: "blue",
    confirmButtonColor: "blue"
  }).then((result) => {
-   /* Read more about isConfirmed, isDenied below */
+
    if (result.isConfirmed) {
-     Swal.fire('estas picante man')
+    nivel = "avanzado",
+     fetch("../rutinas.json")
+     .then((res) => {
+        return res.json()
+     })
+     .then((rutinas) => {
+        selectorRutina(rutinas)
+     })
+     .catch((err)=> {
+        console.log(err)
+     })
    } else if (result.isDenied) {
-     Swal.fire('pone huevo puto')
+    nivel = "principiante",
+    fetch("../rutinas.json")
+    .then((res) => {
+       return res.json()
+    })
+    .then((rutinas) => {
+       selectorRutina(rutinas)
+    })
+    .catch((err)=> {
+       console.log(err)
+    })
    }
  })
 })
-
-
-
-
 
 
 
@@ -431,7 +471,17 @@ Swal.fire({
             html = `
             <div class="pizarra">
             <button class="botonVolver" id="volver">Atras</button>
-            <h3>${rutina.ejercicios}</h3>
+            <h3>Estiramiento previo:</h3>
+            <h4>${rutina.ejercicios.estiramiento}</h4>
+
+            <h3>Entrada en calor:</h3>
+            <h4>${rutina.ejercicios.calentamiento}</h4>
+
+            <h3>Actividad principal:</h3>
+            <h4>${rutina.ejercicios.principal}</h4>
+
+            <h6>Recomendable realizar un estiramiento al finalizar la actividad</h6>
+
 
             </div>`
          }
