@@ -9,8 +9,6 @@ body{
     font-style: normal;
 
 }
-
-
 .titulo{
     position: relative;
     display: flex;
@@ -31,32 +29,33 @@ body{
     left: 50%;
     transform: translate(-50%,0)
 }
-
 .tarjeta{
     background-color: skyblue;
-    height: 400px;
+    height: 270px;
     width: 350px;
     margin: 0 auto;
     border-radius: 5px;
     justify-content: center;
 }
-/* @media (max-width: 576px) {
-    .tarjeta{
-        height: 350px;
-         width: 280px;
+.tarjetaSignin{
+    background-color: skyblue;
+    height: 390px;
+    width: 350px;
+    margin: 0 auto;
+    border-radius: 5px;
+    justify-content: center;
 }
-} */
+.tarjetaLogin{
+    background-color: skyblue;
+    height: 300px;
+    width: 350px;
+    margin: 0 auto;
+    border-radius: 5px;
+    justify-content: center;
+}
 .tarjetaInicio{
     background-color: skyblue;
     height: 240px;
-    width: 350px;
-    margin: 0 auto;
-    border-radius: 5px;
-    justify-content: center;
-}
-.tarjetaDatos{
-    background-color: skyblue;
-    height: 450px;
     width: 350px;
     margin: 0 auto;
     border-radius: 5px;
@@ -126,7 +125,14 @@ body{
 .InicioLinks > a:hover{
     background-color: darkblue;
 }
-
+ .tarjetaDatos{
+    background-color: skyblue;
+    height: 450px;
+    width: 350px;
+    margin: 0 auto;
+    border-radius: 5px;
+    justify-content: center;
+}
 .formularios{
     width: 100%;
     padding: 20px;
@@ -148,6 +154,7 @@ body{
     margin-bottom: 15px;
     padding: 10px;
 }
+
 .botonRegistro{
     background-color: blue;
     color: white;
@@ -191,7 +198,6 @@ body{
     color: white;
     text-decoration: none;
     margin-right: 15px;
-    
 }
 .buttonCerrarSesion:hover{
     background-color: darkblue;
@@ -229,11 +235,20 @@ body{
 .textoCalculos{
     text-align: center;
 }
+.tarjetaRutinas{
+    background-color: skyblue;
+    height: 350px;
+    width: 350px;
+    margin: 0 auto;
+    border-radius: 5px;
+    justify-content: center;
+}
 .formRutinas{
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 50px;
+    padding-top: 25px;
 
 }
 .botonRutinas{
@@ -272,10 +287,9 @@ body{
     border-radius: 5px;
     justify-content: center;
  }
-
  .pizarra > h3{
     text-decoration: underline;
-    padding-top: 25px;
+    padding-top: 20px;
     text-align: center;
     color: darkblue;
     font-size: 22px;
@@ -309,3 +323,71 @@ body{
 .botonVolver:hover{
     background-color: darkblue;
 }
+
+
+/***********Media Query*********/
+
+@media (max-width: 375px){
+    .encabezado > h1{
+        font-size: 30px;
+    }
+    .tarjeta{
+        height: 240px;
+        width: 300px;
+    }
+    .tarjetaSignin{
+        height: 360px;
+        width: 300px;
+    }
+    .tarjetaLogin{
+        height: 290px;
+        width: 300px;
+    }
+    .tarjetaInicio{
+        height: 200px;
+        width: 290px;
+    }
+    .tarjetaPesajes{
+        height: 100%;
+        width: 300px;
+    }
+    .textoCalculos{
+        font-size: 18px;
+    }
+    .InicioLinks > a{
+        font-size: 17px;
+        width: 70px;
+        height: 60px;
+    }
+    .tarjetaDatos{
+        height: 480px;
+        width: 280px;
+    }
+    .buttonAtras{
+        width: 60px;
+        height: 40px;
+        font-size: 17px; 
+    }
+    .buttonCerrarSesion{
+        width: 60px;
+        height: 40px;
+        font-size: 17px;
+    }
+    .tarjetaRutinas{
+        height: 350px;
+        width: 298px;
+    }
+    .formRutinas > h3{
+        font-size: 19px;
+    }
+    .pizarra{
+        height: 450px;
+        width: 300px;
+     }
+     .pizarra > h4{
+        padding-top: 10px;
+        padding: 7px;
+     }
+}
+
+
